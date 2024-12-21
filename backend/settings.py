@@ -126,7 +126,6 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     BASE_DIR / "frontend/build/static",  # Ensure the path points to the static files
-    BASE_DIR / "frontend/build",   # Adjust to match the build location
 ]
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"  # Directory where collectstatic will copy files
