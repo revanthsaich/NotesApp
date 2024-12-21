@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view 
 from .models import Note
+from django.views.decorators.csrf import csrf_exempt
 from .serializers import NoteSerializer 
 # Create your views here.
 
@@ -55,7 +56,7 @@ def getNote(request, pk):
     return Response(serializer.data)
 
 @api_view(['PUT'])
-def updateNote(request, pk):
+def updateNote(request, pk): 
     data = request.data
     note=Note.objects.get(id=pk)
     serializer=NoteSerializer(instance=note,data=data)

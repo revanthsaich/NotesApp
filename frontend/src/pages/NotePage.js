@@ -1,10 +1,12 @@
 import React,{useState,useEffect} from 'react'
 import { useParams,useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Cookies from 'js-cookie';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 const NotePage = () => {
-
+    const csrfToken = Cookies.get('csrftoken');
+    axios.defaults.headers.common['X-CSRFToken'] = csrfToken;
     let noteId=useParams().id
     let  [note,setNote]=useState(null)
     let navigate=useNavigate();

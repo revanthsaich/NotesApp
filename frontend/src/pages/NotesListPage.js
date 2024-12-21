@@ -2,9 +2,10 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios';
 import ListItem from '../components/ListItem';
 import AddButton from '../components/AddButton';
-
+import Cookies from 'js-cookie';
 const NotesListPage = () => {
-
+  const csrfToken = Cookies.get('csrftoken');
+  axios.defaults.headers.common['X-CSRFToken'] = csrfToken;
   // Fetch notes from API
   let [notes,setNotes] = useState([])
 
