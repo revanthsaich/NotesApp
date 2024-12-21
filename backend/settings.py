@@ -125,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATICFILES_DIRS = [
-    BASE_DIR / "frontend/build/static",  # Ensure the path points to the static files
+    BASE_DIR / "frontend/build/static",  # Adjust to match the build location
 ]
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"  # Directory where collectstatic will copy files
